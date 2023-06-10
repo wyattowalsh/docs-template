@@ -1,39 +1,20 @@
-# docs
+<div align='center'>
+    <h1><code>docs-template</code></h1>
+    <h3>An Advanced <a href="https://www.sphinx-doc.org"><b><i>Sphinx</i></b></a>-based Docs Site Template</h3>
+    <img src='docs/_static/img/landing.webp'/>
+    <hr/>
+</div>
 
-- [pydata-sphinx-theme.readthedocs.io](https://pydata-sphinx-theme.readthedocs.io/)
--
+## Overview
 
--
--
+This project is a template for creating advanced project documentation sites using Sphinx, the PyData Sphinx Theme, and many other tools.
 
--
--
--
-- https://cloudconvert.com/
+---
 
-```zsh
+## To View More Information
 
-```
-
-```zsh
-poetry init
-```
+### Launch the Docs Site
 
 ```zsh
-pyenv local 3.11
-poetry env use python3.11
-```
-
-```zsh
-poetry add sphinx@^6 pydata-sphinx-theme sphinx-design myst-parser sphinxcontrib-mermaid sphinx-copybutton sphinx-markdown-builder sphinx-git  sphinx-autobuild sphinx-hoverxref  sphinx-sitemap sphinx-togglebutton sphinx-favicon sphinxcontrib-jquery linkify-it-py -G docs
-```
-
-```zsh
-sphinx-quickstart docs
-```
-
-add to docs/conf.py
-
-```python
-html_theme = "pydata_sphinx_theme"
+open docs/_build/html/index.html
 ```

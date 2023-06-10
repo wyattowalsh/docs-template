@@ -487,18 +487,44 @@ document.write(`
 <hr class="docutils" />
 <section id="setup-steps">
 <h2>Setup Steps<a class="headerlink" href="#setup-steps" title="Permalink to this heading">#</a></h2>
-<section id="clone-the-repository">
-<h3>1. Clone the Repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading">#</a></h3>
+<section id="clone-the-repository-copy-the-docs-directory-and-cleanup">
+<h3>1. Clone the Repository, Copy the Docs Directory, and Cleanup<a class="headerlink" href="#clone-the-repository-copy-the-docs-directory-and-cleanup" title="Permalink to this heading">#</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>use <code class="docutils literal notranslate"><span class="pre">cd</span></code> to navigate to your project’s root directory</p>
 </div>
-<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wyattowalsh/docs-template.git
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wyattowalsh/docs-template.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>docs-template/docs/<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>docs-template
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>2.<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="configure-pyproject-toml">
+<h3>2. Configure <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code><a class="headerlink" href="#configure-pyproject-toml" title="Permalink to this heading">#</a></h3>
+<p>Add the following to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file below your current dependencies:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.group.docs]</span>
+<span class="n">optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="k">[tool.poetry.group.docs.dependencies]</span>
+<span class="n">sphinx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^6&quot;</span>
+<span class="n">pydata-sphinx-theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.13.3&quot;</span>
+<span class="n">sphinx-design</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.4.1&quot;</span>
+<span class="n">myst-parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.0.0&quot;</span>
+<span class="n">sphinxcontrib-mermaid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.9.2&quot;</span>
+<span class="n">sphinx-copybutton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.5.2&quot;</span>
+<span class="n">sphinx-markdown-builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.5.5&quot;</span>
+<span class="n">sphinx-git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^11.0.0&quot;</span>
+<span class="n">sphinx-autobuild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^2021.3.14&quot;</span>
+<span class="n">sphinx-hoverxref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.3.0&quot;</span>
+<span class="n">sphinx-sitemap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^2.5.0&quot;</span>
+<span class="n">sphinx-togglebutton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^0.3.2&quot;</span>
+<span class="n">sphinx-favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^1.0.1&quot;</span>
+<span class="n">sphinxcontrib-jquery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^4.1&quot;</span>
+<span class="n">linkify-it-py</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^2.0.2&quot;</span>
+</pre></div>
+</div>
+<p>To install these dependencies, run:</p>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -553,8 +579,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-links">Useful Links</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-steps">Setup Steps</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">1. Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-copy-the-docs-directory-and-cleanup">1. Clone the Repository, Copy the Docs Directory, and Cleanup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-pyproject-toml">2. Configure <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></li>
 </ul>
 </li>
 </ul>
