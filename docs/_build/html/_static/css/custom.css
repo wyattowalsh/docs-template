@@ -1,0 +1,221 @@
+/* -- theme variables -------------------------------------------------------------- */
+html {
+	--pst-color-primary: #a6d0e4;
+	--pst-color-primary-text: black;
+	--pst-color-secondary: #e4bba6;
+	--pst-color-tertiary: #e4daa6;
+	--pst-color-quaternary: #cfa6e4;
+	font-family: Open Sans;
+}
+html[data-theme="light"] {
+}
+
+html[data-theme="dark"] {
+}
+
+/* max width display mod*/
+.bd-content {
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+/* -- index page ------------------------------------------------------------------- */
+.landing-title {
+	font-size: clamp(1rem, 3.5vw, 12rem);
+	font-weight: 900;
+	letter-spacing: 0;
+	text-decoration: underline;
+	text-decoration-thickness: 0.33rem;
+}
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.hero-image {
+}
+
+.wave {
+	font-size: 120%;
+	animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+	animation-duration: 2.5s; /* Change to speed up or slow down */
+	animation-iteration-count: infinite; /* Never stop waving :) */
+	transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+	display: inline-block;
+	padding-left: 0.5rem;
+}
+
+@keyframes wave-animation {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(14deg);
+	} /* The following five values can be played with to make the waving more or less extreme */
+	20% {
+		transform: rotate(-8deg);
+	}
+	30% {
+		transform: rotate(14deg);
+	}
+	40% {
+		transform: rotate(-4deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	60% {
+		transform: rotate(0deg);
+	} /* Reset for the last half to pause */
+	100% {
+		transform: rotate(0deg);
+	}
+}
+.navbar {
+	height: 8vh;
+	/* width: 100vw; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.bd-page-width {
+	max-width: 90vw !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+.logo {
+	height: clamp(1.5rem, 7vw, 16rem) !important;
+	width: auto;
+}
+.logo:after {
+	content: "docs-template";
+	font-size: clamp(0.5rem, 2.5vw, 8rem);
+	font-weight: 900;
+	letter-spacing: 0;
+	background: linear-gradient(
+		232deg,
+		var(--pst-color-primary),
+		var(--pst-color-secondary),
+		var(--pst-color-tertiary),
+		var(--pst-color-quaternary)
+	);
+	background-size: 500% 500%;
+	animation: gradient-animation 5s ease-in-out infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: underline;
+	text-decoration-color: var(--pst-color-tertiary);
+	text-decoration-thickness: 0.33rem;
+	padding-right: 0.5em;
+	border-right: 0.1em double var(--pst-color-primary);
+}
+.icon-link-image {
+	height: clamp(1rem, 1.5vw, 10rem) !important;
+	width: auto;
+}
+.nav-item > a > span > .fa-square-github {
+	font-size: clamp(1rem, 1.5vw, 10rem) !important;
+}
+.theme-switch > .fa-sun {
+	font-size: clamp(1rem, 1.5vw, 10rem) !important;
+}
+.search-button > .fa-magnifying-glass {
+	font-size: clamp(1rem, 1.5vw, 10rem) !important;
+}
+.site-hr {
+	width: 92.5%;
+	height: 0;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: visible;
+	border-top: thick double var(--pst-color-secondary);
+	text-align: center;
+	text-justify: center;
+	color: var(--pst-color-primary);
+	-webkit-tap-highlight-color: var(--pst-color-primary);
+	margin: 2rem 0;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.site-hr:after {
+	content: "📝";
+	-webkit-tap-highlight-color: var(--pst-color-primary);
+	font-size: 1.5rem;
+	text-align: center;
+}
+.nav-internal {
+	font-size: clamp(1rem, 1.25vw, 10rem) !important;
+	font-weight: 700 !important;
+	padding: 0.25rem;
+}
+.nav-internal:hover {
+	background-color: RGBA(166, 208, 228, 0.5);
+}
+.nav-internal > .nav-icon {
+	font-size: clamp(1rem, 1.5vw, 10rem);
+	padding-left: 0.25rem;
+	color: var(--pst-color-primary);
+}
+.nav-icon {
+	font-size: clamp(1rem, 2.5vw, 10rem);
+	padding-left: 0.25rem;
+	color: var(--pst-color-primary);
+}
+.breadcrumb-item {
+	font-size: clamp(0.25rem, 1.25vw, 10rem);
+	font-weight: 700;
+	color: var(--pst-color-primary);
+}
+li > a > span > .std-ref {
+	color: black;
+}
+
+li > a > .std-ref:after {
+	color: inherit;
+	content: "";
+}
+
+h1 > a > .std-ref:after {
+	color: inherit;
+	content: "";
+}
+
+h1 > .std-ref:after {
+	color: inherit;
+	content: "";
+}
+.sd-card-img-top {
+	width: 25%;
+	height: auto;
+	margin: auto;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: transparent;
+	padding: 1rem;
+}
+.navlink {
+	font-size: clamp(1rem, 2vw, 10rem) !important;
+}
+.navbar-icon-links {
+	padding-left: 0.5rem;
+	border-left: 0.15rem solid var(--pst-color-primary);
+}
+.fa-sun {
+	color: #fce570;
+}
+.fa-circle-half-stroke {
+	color: #8a7f8d;
+}
+
+.bd-main .bd-content .bd-article-container {
+	max-width: 80%;
+}
